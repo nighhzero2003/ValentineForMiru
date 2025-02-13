@@ -2,33 +2,91 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="./styles.css">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: rgb(225, 122, 122);
+                margin: 0;
+            }
+
+            .container {
+                text-align: center;
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .header_text {
+                font-family: 'Nunito', sans-serif;
+                font-size: 36px;
+                font-weight: bold;
+                color: rgb(233, 48, 48);
+                margin: 10px 0;
+            }
+
+            .gif_container img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+            .buttons {
+                margin-top: 20px;
+            }
+
+            .btn {
+                background-color: #ffffff;
+                color: rgb(233, 48, 48);
+                padding: 15px 32px;
+                text-align: center;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border: none;
+                border-radius: 12px;
+                transition: background-color 0.3s ease;
+            }
+
+            .btn:hover {
+                background-color: rgb(233, 48, 48);
+                color: white;
+            }
+
+            #noButton {
+                position: relative;
+            }
+        </style>
     </head> 
     <body>
         <div class="container">
-            <div >
-                <h1 class = "header_text">Valentine Day</h1>
-                <h1 class = "header_text">Do u love me?</h1>
+            <div>
+                <h1 class="header_text">Valentine Day</h1>
+                <h1 class="header_text">Do u love me?</h1>
             </div>
             <div class="gif_container">
-                <img src="./kitty.gif" alt="">
+                <img src="./kitty.gif" alt="Cute kitty gif">
             </div>
-            <div class = "buttons">
-                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+            <div class="buttons">
+                <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
                 <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
-                <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
-                    }
-                    
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
-                </script> 
             </div>
         </div>
-       
+        <script>
+            function nextPage() {
+                window.location.href = "index1.html"; // Redirect to index1.html
+            }
+            
+            function moveButton() {
+                var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+                var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                document.getElementById('noButton').style.left = `${x}px`;
+                document.getElementById('noButton').style.top = `${y}px`;
+            }
+        </script> 
     </body> 
-</html>
+</html> 
