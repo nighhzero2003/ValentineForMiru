@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Virtual Valentine's Day Card</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./yes_style.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 class="valentine">
+      Hi, Please check out my Valentine's e-letter for Meowww!
+    </h1>
+    <div class="envelope-wrapper">
+      <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+          <p class="words line1">Moshi Moshi !!!,</p>
+          <p class="words line2">Lại 1 Valentine mới đã tới.Chúc em luôn luôn xinh đẹp, tươi cười trên đôi môi nhé . Yêu em 💓 "By Wauuu"</p>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reset">
+      <button id="open">Open</button>
+      <button id="reset">Close</button>
+    </div>
+    <div class="container" id="stickerContent" style="display: none;">
+      <div>
+        <h1 class="header_text">Yehhhhhh!!</h1>
+      </div>
+      <div class="gif_container">
+        <img
+          src="https://i.pinimg.com/originals/94/cc/23/94cc238b53dc24439664fcd65a3c0c36.gif"
+          alt="Cute animated illustration"
+        />
+      </div>
+    </div>
+    <!-- Script JS -->
+    <script>
+      $(document).ready(function() {
+        var envelope = $("#envelope");
+        var btn_open = $("#open");
+        var btn_reset = $("#reset");
+        var stickerContent = $("#stickerContent");
+
+        envelope.click(function() {
+          open();
+        });
+        btn_open.click(function() {
+          open();
+        });
+        btn_reset.click(function() {
+          close();
+        });
+
+        function open() {
+          envelope.addClass("open").removeClass("close");
+          stickerContent.show(); // Show the sticker content
+        }
+
+        function close() {
+          envelope.addClass("close").removeClass("open");
+          stickerContent.hide(); // Hide the sticker content
+        }
+      });
+    </script>
+  </body>
+</html>
